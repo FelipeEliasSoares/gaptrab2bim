@@ -103,7 +103,7 @@ void Clinica::RemoverVet(){
     
     for(int i=0;i<3;i++){
 
-        if(dadosVet[i].id==id){
+        if(dadosVet[i].id== id){
             dadosVet[i].id = 0;
             dadosVet[i].nome ="";
             dadosVet[i].crmv ="";
