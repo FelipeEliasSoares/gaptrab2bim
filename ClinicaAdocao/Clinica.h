@@ -12,9 +12,27 @@
 
 #ifndef CLINICA_H
 #define CLINICA_H
+#include<iostream>
+#include <string.h>
 
+using namespace std;
 class Clinica {
 public:
+    
+    struct Veterinario{
+        int id;
+        string nome;
+        string crmv;
+           
+    }dadosVet[3];
+    
+    void CadastroVet();
+    void AtualizarVet();
+    void RemoverVet();
+    void PesquisarVet();
+    void MenuVet();
+    void ListarVet();
+    
     Clinica();
     Clinica(const Clinica& orig);
     virtual ~Clinica();
