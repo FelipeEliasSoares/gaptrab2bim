@@ -60,14 +60,15 @@ public:
     void PesquisarVet();
     void MenuVet();
     void ListarVet();
-    
+    int PesquisarVeterinario2(); 
 
 
-    void Menu();
+    void MenuConsulta();
     void AgendarConsulta();
     void PesquisarConsulta();
     void ListarConsulta();
     void RemoverConsulta();
+
 
 
     void CadastroPet();
@@ -76,7 +77,9 @@ public:
     void PesquisarPet();
     void MenuPet();
     void ListarPet();	
-
+    int PesquisarPet2();
+    
+    void Menu();
     
     Clinica();
     Clinica(const Clinica& orig);

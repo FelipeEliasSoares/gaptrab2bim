@@ -12,6 +12,8 @@
 
 #include <cstdlib>
 
+#include "Clinica.h"
+
 using namespace std;
 
 /*
@@ -19,6 +21,9 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
+    
+    Clinica obj;
+    obj.Menu();
     return 0;
 }
 

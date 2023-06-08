@@ -155,7 +155,26 @@ void Clinica::PesquisarPet(){
         if(!encontrado){
             cout<<"Nao encontrado";
         }
-    } 
+} 
+
+int Clinica::PesquisarPet2(){
+    int id,encontradoID;
+    cout << "Digite seu ID para pesquisa: " << endl;
+    cin >> id;
+
+    
+    for(int i=0;i<3;i++){
+
+        if(DadosAnimal[i].id==id){
+            encontradoID = DadosAnimal[i].id;
+            return encontradoID;
+        }else{
+            return -1;
+        }
+
+        }
+  } 
+
 
 void Clinica::ListarPet(){
     
@@ -290,7 +309,26 @@ void Clinica::PesquisarVet(){
         if(!encontrado){
             cout<<"Nao encontrado" << endl;
         }
-    } 
+} 
+
+int Clinica::PesquisarVeterinario2(){
+    int id,encontradoID;
+    cout << "Digite seu ID para pesquisa: " << endl;
+    cin >> id;
+
+    
+    for(int i=0;i<3;i++){
+
+        if(dadosVet[i].id==id){
+            encontradoID = dadosVet[i].id;
+            return encontradoID;
+        }else{
+            return -1;
+        }
+
+        }
+  } 
+
 
 void Clinica :: ListarVet(){
     
@@ -326,8 +364,18 @@ void Clinica::AgendarConsulta(){
     
     
     
-    //aux_id_veterinario= cVeterinario.Pesquisar();
-    //aux_id_animal= Pet.Pesquisar();
+    aux_id_veterinario= this->PesquisarVeterinario2();
+    
+    if(aux_id_veterinario==-1){
+        cout<<"ID não encontrado" << endl << endl;
+        this->Menu();
+    }
+    aux_id_animal= this->PesquisarPet2();
+    
+    if(aux_id_animal==-1){
+        cout<<"ID não encontrado" << endl << endl;
+        this->Menu();
+    }
     
     
     atende_hora* novo_atendimento = new atende_hora;
@@ -444,8 +492,8 @@ void Clinica::PesquisarConsulta() {
 }
 
 
-void Clinica :: Menu(){
-    int opc;
+void Clinica :: MenuConsulta(){
+    int opc=90;
     while(opc!=0){
         switch(opc){
             case 1:
@@ -458,11 +506,29 @@ void Clinica :: Menu(){
                 this->RemoverConsulta();
     };
     cout<<endl;
-    cout<<"Digete\n1-Cadastrar:\n2-Listar\n3-Remover\n0-Sair\n\nDigite:";
+    cout<<"Digite\n1-Cadastrar:\n2-Listar\n3-Remover\n0-Sair\n\nDigite:";
     cin>>opc;
     }
 }
 
+void Clinica :: Menu(){
+    int opc=9;
+    while(opc!=0){
+        switch(opc){
+            case 1:
+                this->MenuConsulta();
+            break;
+            case 2:
+                this->MenuPet();
+            break;
+            case 3:
+                this->MenuVet();
+    };
+    cout<<endl;
+    cout<<"Digite\n1-Menu Consulta:\n2-Menu Animal\n3-Menu Veterinario\n0-Sair\n\nDigite:";
+    cin>>opc;
+    }   
+}
 
 
 
