@@ -14,13 +14,23 @@
 #define CLINICA_H
 #include<iostream>
 #include <string.h>
+#include<stdio.h>
+
 
 using namespace std;
 
-
 class Clinica {
 public:
-    
+
+    struct Animal{
+            int id;
+            string nomedono, nomepet;
+            string raca, tipo;
+            long int telefonedono;   
+    }DadosAnimal[3];
+    		    
+
+
     struct Veterinario{
         int id;
         string nome;
@@ -28,12 +38,6 @@ public:
            
     }dadosVet[3];
     
-    void CadastroVet();
-    void AtualizarVet();
-    void RemoverVet();
-    void PesquisarVet();
-    void MenuVet();
-    void ListarVet();
     
     struct atende_hora{
         int hora;
@@ -44,21 +48,39 @@ public:
         atende_hora* proximo_atendimento;       
     };
     
+        
     atende_hora* id_atendimento = NULL;
     
     atende_hora *novo_atendimento,*ultimo_atendimento = NULL;
     
+    
+    void CadastroVet();
+    void AtualizarVet();
+    void RemoverVet();
+    void PesquisarVet();
+    void MenuVet();
+    void ListarVet();
+    
+
+
     void Menu();
     void AgendarConsulta();
     void PesquisarConsulta();
     void ListarConsulta();
     void RemoverConsulta();
+
+
+    void CadastroPet();
+    void AtualizarPet();
+    void RemoverPet();
+    void PesquisarPet();
+    void MenuPet();
+    void ListarPet();	
+
     
     Clinica();
     Clinica(const Clinica& orig);
     virtual ~Clinica();
-    
-
     
 private:
 
